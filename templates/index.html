@@ -5,6 +5,59 @@
 {{ render_blocks(page_blocks.get("hero", [])) }}
 {{ render_blocks(page_blocks.get("after_hero", [])) }}
 
+
+{{ render_blocks(page_blocks.get("top", [])) }}
+{{ render_blocks(page_blocks.get("hero", [])) }}
+{{ render_blocks(page_blocks.get("after_hero", [])) }}
+
+<section class="page-section hero-profile reveal">
+  <div class="hero-profile-card">
+    
+    <img 
+      src="{{ gh.profile.avatar_url }}?v={{ gh.profile.updated_at }}" 
+      alt="{{ gh.profile.login }}"
+      class="github-avatar"
+    >
+
+    <div class="hero-profile-info">
+      <span class="chip">Live GitHub Profile</span>
+
+      <h1>{{ gh.profile.name }}</h1>
+
+      <p>{{ gh.profile.bio }}</p>
+
+      <div class="hero-stats">
+        <article>
+          <strong>{{ gh.profile.public_repos }}</strong>
+          <span>Repos</span>
+        </article>
+
+        <article>
+          <strong>{{ gh.profile.followers }}</strong>
+          <span>Followers</span>
+        </article>
+
+        <article>
+          <strong>{{ gh.profile.following }}</strong>
+          <span>Following</span>
+        </article>
+      </div>
+
+      <div class="actions">
+        <a 
+          class="button"
+          href="{{ gh.profile.html_url }}"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open GitHub
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section class="page-section split" id="about">
   <div class="reveal">{{ render_blocks(page_blocks.get("about_intro", [])) }}</div>
   <div class="metric-grid reveal">
