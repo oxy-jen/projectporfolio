@@ -26,7 +26,7 @@ DB_PATH = os.environ.get("DB_PATH", os.path.join(app.root_path, "oxyjen.db"))
 UPLOAD_DIR = os.environ.get("UPLOAD_DIR", os.path.join(app.root_path, "static", "uploads"))
 GITHUB_USER = "oxy-jen"
 CACHE = {"profile": None, "repos": None, "events": None, "languages": None, "time": 0}
-CACHE_TTL = int(os.environ.get("GITHUB_CACHE_TTL", "0"))
+CACHE_TTL = int(os.environ.get("GITHUB_CACHE_TTL", "300"))
 
 
 REAL_PROFILE_FALLBACK = {
