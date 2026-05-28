@@ -873,11 +873,7 @@ def admin():
     contacts = rows("SELECT * FROM contact_links ORDER BY sort_order, id")
     return render_template("admin.html", pending=pending, approved=approved, testimonials=testimonials, content=content, messages=messages, contacts=contacts)
 
-@app.route("/reset-admin")
-def reset_admin():
-    with sqlite3.connect(DB_PATH) as conn:
-        conn.execute("DELETE FROM site_settings WHERE key='admin_password_hash'")
-    return "Admin password reset"
+
 
 
 @app.route("/admin/logout")
